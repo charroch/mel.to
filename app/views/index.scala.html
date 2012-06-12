@@ -1,7 +1,17 @@
-@(message: String)
+@(tasks: List[Task])
 
-@main("Welcome to Play 2.0") {
-    
-    @welcome(message)
-    
+@import helper._
+
+@main("Todo list") {
+
+<h1>@tasks.size task(s)</h1>
+
+<ul>
+    @tasks.map { task =>
+    <li>
+        @task.label
+    </li>
+    }
+</ul>
+
 }
